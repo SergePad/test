@@ -5,11 +5,15 @@ on:
       project_name:
         type: string
         description: "name of the project"
+      environment:
+        type: string
+        description: "environment"
+      
 jobs:
   test:
     runs-on: ubuntu-latest
     name: test
     steps:
      - name: test
-       run: echo ${{ inputs.my_variable }}
+       run: echo ${{ inputs.my_variable }}.${{ inputs.environment }}
 
