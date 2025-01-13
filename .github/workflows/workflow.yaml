@@ -17,15 +17,13 @@ jobs:
      - name: Failure
        run: |
         if [ "${{ inputs.environment }}" == "nonproduction" ]; then
-          URL="https://google.com/${{ inputs.project_name }}"
+          echo "https://google.com/${{ inputs.project_name }}"
         elif [ "${{ inputs.environment }}" == "preproduction" ]; then
-          URL="https://youtube.com"
-        elif [ "${{ inputs.environment }}" == "production" ]; then
-          URL="https://google.com"
-        else
-          URL="https://default.com"
+          echo "youtube.com"
+        else [ "${{ inputs.environment }}" == "production" ]; then
+          echo "google.com"
         fi
-        echo "Failed deploy see ArgoCD at $URL"
+        echo "Failed deploy see ArgoCD at"
 
 
     #  - name: Failure
