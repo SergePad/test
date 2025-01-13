@@ -4,7 +4,7 @@ on:
     my_variable:
      type: string
      description: "test variable"
-  jobs:
-    test:
-      name: test
+jobs:
+  test:
+    name: test
 
