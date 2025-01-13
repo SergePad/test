@@ -20,8 +20,10 @@ jobs:
           echo "https://google.com/${{ inputs.project_name }}"
         elif [ "${{ inputs.environment }}" == "preproduction" ]; then
           echo "youtube.com"
-        else [ "${{ inputs.environment }}" == "production" ]; then
+        elif [ "${{ inputs.environment }}" == "production" ]; then
           echo "google.com"
+        else
+          echo "default.com"
         fi
         echo "Failed deploy see ArgoCD at"
 
