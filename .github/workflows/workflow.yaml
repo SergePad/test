@@ -15,5 +15,5 @@ jobs:
     name: test
     steps:
      - name: test
-       run: echo ${{ inputs.my_variable }}.${{ inputs.environment }}
+       run: echo ${{ inputs.project_name}}.${{ inputs.environment }}
 
