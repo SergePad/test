@@ -20,21 +20,12 @@ jobs:
           URL="https://youtube.com"
         elif [ "${{ inputs.environment }}" == "preproduction" ]; then
           URL="https://google.com/maps"
-        else
+        elif [ "${{ inputs.environment }}" == "production" ]; then
           URL="https://pax8.com"
+        else
+          echo "unknown environment"
+          exit 1
         fi
         echo "Failed deploy see ArgoCD at $URL"
 
-
-    #  - name: Failure
-    #    run: |
-    #     if [ "${{ inputs.environment }}" == "nonproduction" ]; then
-    #       URL="https://google.com/${{ inputs.project_name }}"
-    #     elif [ "${{ inputs.environment }}" == "preproduction" ]; then
-    #       URL="https://youtube.com"
-    #     else [ "${{ inputs.environment }}" == "production" ]; then
-    #       URL="https://google.com"
-    #     fi
-    #     echo "Failed deploy see ArgoCD at $URL"
-    #     exit 1
 
