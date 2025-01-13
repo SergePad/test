@@ -16,8 +16,6 @@ jobs:
     steps:
      - name: test
        run: echo ${{ inputs.project_name}}.${{ inputs.environment }}
-     - name: test2
-       run: echo "https://${{ inputs.website }}/${{ inputs.mail}}"
      - name: Failure
        run: |
         if [ "${{ inputs.environment }}" == "nonproduction" ]; then
