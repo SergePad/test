@@ -17,19 +17,16 @@ jobs:
      - name: Failure
        run: |
         if [ "${{ inputs.environment }}" == "nonproduction" ]; then
-          echo "https://google.com/${{ inputs.project_name }}"
-          exit 0
+          URL="https://youtube.com"
         elif [ "${{ inputs.environment }}" == "preproduction" ]; then
-          echo "youtube.com"
-          exit 0
+          URL="https://google.com/maps"
         elif [ "${{ inputs.environment }}" == "production" ]; then
-          echo "google.com"
-          exit 0
+          URL="https://google.com"
         else
-          echo "default.com"
-          exit 0
+          URL="https://argocd.default.paxating.com/applications/argocd/${{ inputs.project_name }}"
         fi
-        echo "Failed deploy see ArgoCD at"
+        echo "Failed deploy see ArgoCD at $URL"
+        exit 1
 
 
     #  - name: Failure
