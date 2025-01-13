@@ -20,13 +20,10 @@ jobs:
           URL="https://youtube.com"
         elif [ "${{ inputs.environment }}" == "preproduction" ]; then
           URL="https://google.com/maps"
-        elif [ "${{ inputs.environment }}" == "production" ]; then
-          URL="https://google.com"
         else
-          URL="https://argocd.default.paxating.com/applications/argocd/${{ inputs.project_name }}"
+          URL="https://pax8.com"
         fi
         echo "Failed deploy see ArgoCD at $URL"
-        exit 1
 
 
     #  - name: Failure
