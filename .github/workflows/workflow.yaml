@@ -7,4 +7,7 @@ on:
 jobs:
   test:
     name: test
+    steps:
+     - name:test
+       run: echo ${{ vars.my_variable }}
 
