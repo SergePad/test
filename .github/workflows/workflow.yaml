@@ -18,12 +18,16 @@ jobs:
        run: |
         if [ "${{ inputs.environment }}" == "nonproduction" ]; then
           echo "https://google.com/${{ inputs.project_name }}"
+          exit 0
         elif [ "${{ inputs.environment }}" == "preproduction" ]; then
           echo "youtube.com"
+          exit 0
         elif [ "${{ inputs.environment }}" == "production" ]; then
           echo "google.com"
+          exit 0
         else
           echo "default.com"
+          exit 0
         fi
         echo "Failed deploy see ArgoCD at"
 
