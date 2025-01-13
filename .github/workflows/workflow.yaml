@@ -19,14 +19,14 @@ jobs:
      - name: test2
        run: echo "https://${{ inputs.website }}/${{ inputs.mail}}"
      - name: Failure
-            run: |
-              if [ "${{ inputs.environment }}" = "nonproduction" ]; then
-                URL="https://google.com/${{ inputs.project_name }}"
-              elif [ "${{ inputs.environment }}" = "preproduction" ]; then
-                URL="https://youtube.com"
-              else [ "${{ inputs.environment }}" = "production" ]; then
-                URL="https://google.com"
-              fi
-              echo "Failed deploy see ArgoCD at $URL"
-              exit 1
+       run: |
+        if [ "${{ inputs.environment }}" = "nonproduction" ]; then
+          URL="https://google.com/${{ inputs.project_name }}"
+        elif [ "${{ inputs.environment }}" = "preproduction" ]; then
+          URL="https://youtube.com"
+        else [ "${{ inputs.environment }}" = "production" ]; then
+          URL="https://google.com"
+        fi
+        echo "Failed deploy see ArgoCD at $URL"
+        exit 1
 
