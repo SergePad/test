@@ -2,9 +2,9 @@ name: test
 on:
   workflow_dispatch:
    inputs:
-      my_variable:
+      project_name:
         type: string
-        description: "test variable"
+        description: "name of the project"
 jobs:
   test:
     runs-on: ubuntu-latest
