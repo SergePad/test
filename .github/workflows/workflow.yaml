@@ -8,6 +8,10 @@ on:
       environment:
         type: string
         description: "environment"
+      website:
+        type: string
+      mail:
+        type: string
       
 jobs:
   test:
@@ -16,4 +20,6 @@ jobs:
     steps:
      - name: test
        run: echo ${{ inputs.project_name}}.${{ inputs.environment }}
+     - name: test2
+       run: echo &{{ inputs.website }}/${{ inputs.mail}}
 
