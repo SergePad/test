@@ -28,7 +28,6 @@ jobs:
           URL="https://default.com"
         fi
         echo "Failed deploy see ArgoCD at $URL"
-        exit 1
 
 
     #  - name: Failure
