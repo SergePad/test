@@ -1,13 +1,14 @@
 name: test
 on:
   workflow_dispatch:
-    my_variable:
-     type: string
-     description: "test variable"
+   inputs:
+      my_variable:
+      type: string
+      description: "test variable"
 jobs:
   test:
     name: test
     steps:
      - name:test
-       run: echo ${{ vars.my_variable }}
+       run: echo ${{ inputs.my_variable }}
 
