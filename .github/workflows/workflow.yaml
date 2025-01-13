@@ -14,8 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     name: test
     steps:
-     - name: test
-       run: echo ${{ inputs.project_name}}.${{ inputs.environment }}
      - name: Failure
        run: |
         if [ "${{ inputs.environment }}" == "nonproduction" ]; then
