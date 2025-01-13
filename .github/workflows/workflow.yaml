@@ -9,6 +9,6 @@ jobs:
   test:
     name: test
     steps:
-     - name:test
+     - name: test
        run: echo ${{ inputs.my_variable }}
 
